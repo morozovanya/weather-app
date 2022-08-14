@@ -1,0 +1,130 @@
+.container {
+  display: block;
+  margin: -5px 80px;
+}
+
+#temperature {
+  display: inline-block;
+  padding: 20px 10px 20px 0;
+  margin: 0px 0px 20px 0px;
+  background-color: rgb(235, 237, 249);
+  border-radius: 70px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(89, 106, 202);
+}
+
+.degrees {
+  position: relative;
+  top: -58px;
+  left: 50px;
+  font-size: 34px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#search-form {
+  display: inline-block;
+  margin: 0 -450px;
+  padding: 30px 0;
+}
+
+#main-emoji {
+  font-size: 90px;
+  margin: 0px 30px;
+}
+
+#main-data {
+  text-align: left;
+}
+
+#forecast {
+  display: flexbox;
+  text-align: center;
+  padding: 30px 5px;
+  margin: 20px 500px 30px -10px;
+  background-color: rgb(235, 237, 249);
+  border-radius: 60px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(89, 106, 202);
+}
+
+input {
+  padding: 10px 30px;
+  text-align: left;
+  border-radius: 23px;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(89, 106, 202);
+}
+
+.humidity {
+  color: rgba(0, 0, 0, 0.41);
+}
+
+#field {
+  margin-left: 450px;
+  padding-right: 80px;
+}
+
+#searchbutton {
+  background-color: rgb(89, 106, 202);
+}
+
+button {
+  display: inline-block;
+  text-decoration: #fff;
+  width: max-content;
+  margin: 20px 50px 4px 350px;
+  background-color: rgb(89, 106, 202);
+  padding: 12px;
+  text-align: center;
+  border-radius: 23px;
+  border: none;
+}
+
+h2 {
+  margin-left: 32px;
+  display: block;
+  padding-top: 20px;
+  text-align: left;
+}
+
+p#temperature1 {
+  color: rgba(0, 0, 0, 0.41);
+}
+p#temperature2 {
+  color: rgba(0, 0, 0, 0.41);
+}
+p#temperature3 {
+  color: rgba(0, 0, 0, 0.41);
+}
+p#temperature4 {
+  color: rgba(0, 0, 0, 0.41);
+}
+p#temperature5 {
+  color: rgba(0, 0, 0, 0.41);
+}
+p#temperature6 {
+  color: rgba(0, 0, 0, 0.41);
+}
+p#temperature7 {
+  color: rgba(0, 0, 0, 0.41);
+}
+
+div.col {
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: rgba(0, 0, 0, 0.188);
+}
+
+#noborder {
+  border-right-style: none;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>Fast Sunset App</title>
+    
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form class="search" id="search-form">
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              placeholder="Search city..."
+              autofocus="on"
+              autocomplete="off"
+              id="field"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" value="🔎" id="searchbutton" />
+          </div>
+        </div>
+      </form>
+
+      <button>
+        Current location
+      </button>
+
+      <div class="row">
+        <div class="col-6" id="temperature">
+          <div class="row">
+            <div class="col-8 col-sm-2" id="main-emoji">🌤</div>
+            <div class="col-4 col-sm-8" id="main-data">
+              <h1> 18 </h1>
+              <div class="units">
+                  <a href="#" id="celsius">°C</a> |
+                  <a href="#" id="fahrenheit">°F</a>
+              </div>
+              <p class="humidity">
+                Rain: 7%
+                <br />
+                Humidity: 58%
+                <br />
+                Wind: 10 km/h
+              </p>
+            </div>
+          </div>
+          <h2 id="city-date">
+              <div id="location">Kyiv</div>
+              <div id="date">Monday 15:00</div>
+            </h2>
+        </div>
+      
+
+      <div class="row row-cols-7" id="forecast">
+        <div class="col">
+          <p id="day1">MON</p>
+          <p id="emoji1">⛅️</p>
+          <p id="temperature1">17º</p>
+        </div>
+        <div class="col">
+          <p id="day2">TUE</p>
+          <p id="emoji2">☀️</p>
+          <p id="temperature2">23º</p>
+        </div>
+        <div class="col">
+          <p id="day3">WED</p>
+          <p id="emoji3">🌈</p>
+          <p id="temperature3">22º</p>
+        </div>
+        <div class="col">
+          <p id="day4">THU</p>
+          <p id="emoji4">🌈</p>
+          <p id="temperature4">28º</p>
+        </div>
+        <div class="col">
+          <p id="day5">FRI</p>
+          <p id="emoji5">🌤</p>
+          <p id="temperature5">29º</p>
+        </div>
+        <div class="col">
+          <p id="day6">SAT</p>
+          <p id="emoji6">☁️</p>
+          <p id="temperature6">26º</p>
+        </div>
+        <div class="col" id="noborder">
+          <p id="day7">SUN</p>
+          <p id="emoji7">⛅️</p>
+          <p id="temperature7">26º</p>
+        </div>
+      </div>
+    </div>
+    <script src=src/index.js></script>
+    
+  </body>
+</html>
