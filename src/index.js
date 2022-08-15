@@ -34,17 +34,20 @@ function responseRealTemp(response) {
   requestedCity.innerHTML = response.data.name;
 }
 
-//feature2
-function search(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "670149a988417f0bd9de2e4879ba6c8b";
-  let newcityweather = document.querySelector("#field").value;
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${newcityweather}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(responseRealTemp);
+
 }
 
-let searchcity = document.querySelector("#search-form");
-searchcity.addEventListener("submit", search);
+//feature2
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#field").value;
+  search(city);
+}
+
 
 //feature3
 function convertToCelsium(event) {
@@ -88,5 +91,10 @@ function showTemperature(response) {
     changeTemperature.innerHTML = `${temperatureLocal}`;
   }
 }
+
+let searchcity = document.querySelector("#search-form");
+searchcity.addEventListener("submit", handleSubmit);
+
+search("Kyiv");
 
 
