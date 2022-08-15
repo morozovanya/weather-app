@@ -71,24 +71,28 @@ input {
 
 #field {
   margin-left: 450px;
-  padding-right: 80px;
+  padding-right: 30px;
 }
 
 #searchbutton {
   background-color: rgb(89, 106, 202);
 }
 
-button {
+#currentlocationbutton {
   display: inline-block;
-  text-decoration: #fff;
   width: max-content;
-  margin: 80px 50px 4px 350px;
-  background-color: rgb(89, 106, 202);
+  margin: -50px 0px 20px 0px;
+  background-color: rgb(243, 251, 13);
+  color: rgb(89, 106, 202);
   padding: 12px;
   text-align: center;
-  border-radius: 23px;
+  border-radius: 53px;
   border: none;
 }
+
+
+
+
 
 h2 {
   margin-left: 32px;

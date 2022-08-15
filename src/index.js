@@ -68,29 +68,32 @@ temperatureCelsium.addEventListener("click", convertToCelsium);
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", convertToFahrenheit);
 
-function showPosition(location) {
+
+function localise() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+  function showPosition(location) {
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
   let apiKey = "670149a988417f0bd9de2e4879ba6c8b";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showTemperature);
 }
-
-navigator.geolocation.getCurrentPosition(showPosition);
-
+}
 
 function showTemperature(response) {
-  let buttonaction = document.querySelector("button");
-  buttonaction.addEventListener("click", localise);
-  function localise() {
     let cityLocal = response.data.name;
     let changeCityToLocal = document.querySelector("#location");
     changeCityToLocal.innerHTML = `${cityLocal}`;
     let temperatureLocal = Math.round(response.data.main.temp);
     let changeTemperature = document.querySelector("h1");
     changeTemperature.innerHTML = `${temperatureLocal}`;
-  }
+
 }
+
+let buttonaction = document.querySelector("button");
+buttonaction.addEventListener("click", localise);
+  
+
 
 let searchcity = document.querySelector("#search-form");
 searchcity.addEventListener("submit", handleSubmit);
