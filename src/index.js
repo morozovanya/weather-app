@@ -50,7 +50,7 @@ searchcity.addEventListener("submit", search);
 function convertToCelsium(event) {
   event.preventDefault();
   let celsiumDegree = document.querySelector("h1");
-  celsiumDegree.innerHTML = 18;
+  celsiumDegree.innerHTML = `${cityTemp}`;
 }
 
 function convertToFahrenheit(event) {
@@ -73,6 +73,9 @@ function showPosition(location) {
   axios.get(url).then(showTemperature);
 }
 
+navigator.geolocation.getCurrentPosition(showPosition);
+
+
 function showTemperature(response) {
   let buttonaction = document.querySelector("button");
   buttonaction.addEventListener("click", localise);
@@ -86,4 +89,4 @@ function showTemperature(response) {
   }
 }
 
-navigator.geolocation.getCurrentPosition(showPosition);
+
