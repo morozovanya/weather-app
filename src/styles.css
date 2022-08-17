@@ -4,6 +4,16 @@
 
 }
 
+#main-data .active {
+  color: rgb(33,33,33);
+  text-decoration: none;
+  cursor: default;
+}
+
+#main-data .active:hover {
+  text-decoration:none;
+}
+
 #temperature {
   display: inline-block;
   padding: 20px 10px 20px 0;
@@ -95,11 +105,6 @@ input {
   border-radius: 53px;
   border: none;
 }
-
-
-
-
-
 
 
 h2 {

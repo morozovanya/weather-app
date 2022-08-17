@@ -59,6 +59,8 @@ function handleSubmit(event) {
 function convertToCelsium(event) {
   event.preventDefault();
   let celsiumDegree = document.querySelector("h1");
+  temperatureCelsium.classList.add("active");
+  temperatureFahrenheit.classList.remove("active");
   celsiumDegree.innerHTML = Math.round(celsiusTemperature);
 }
 
@@ -66,6 +68,8 @@ function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitDegree = (celsiusTemperature * 9) /5 + 32;
   let temperatureElement = document.querySelector("h1");
+  temperatureCelsium.classList.remove("active");
+  temperatureFahrenheit.classList.add("active");
   temperatureElement.innerHTML = Math.round(fahrenheitDegree);
 }
 
