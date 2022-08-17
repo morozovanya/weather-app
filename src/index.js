@@ -25,19 +25,33 @@ let date = document.querySelector("#date");
 let now = new Date();
 date.innerHTML = formatDate(now);
 
+function cityDate(timestamp) {
+  let date = new Date(timestamp);
+  let actualday = days[date.getDay()];
+  let actualhours = date.getHours();
+  let actualminutes = date.getMinutes();
+  return `${actualday} ${actualhours}:${actualminutes}`;
+}
+
 function responseRealTemp(response) {
+  console.log(response);
   let cityTemp = Math.round(response.data.main.temp);
   let temperatureReal = document.querySelector("h1");
-  temperatureReal.innerHTML = `${cityTemp}`;
   let requestedCity = document.querySelector("#location");
-  requestedCity.innerHTML = response.data.name;
   let changeMainEmoji = document.querySelector("#main-emoji");
-  changeMainEmoji.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let descriptionElement = document.querySelector("#description");
 
+
+
+  temperatureReal.innerHTML = `${cityTemp}`;
+  requestedCity.innerHTML = response.data.name;
+  changeMainEmoji.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   celsiusTemperature = response.data.main.temp;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 function search(city) {
@@ -105,12 +119,17 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 let buttonaction = document.querySelector("button");
 buttonaction.addEventListener("click", localise);
   
-
 
 let searchcity = document.querySelector("#search-form");
 searchcity.addEventListener("submit", handleSubmit);

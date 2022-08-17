@@ -10,6 +10,9 @@
   cursor: default;
 }
 
+#description {
+  text-transform: capitalize;
+}
 #main-data .active:hover {
   text-decoration:none;
 }
@@ -81,7 +84,7 @@ input {
   border-color: rgb(89, 106, 202);
 }
 
-.humidity {
+.elements {
   color: rgba(0, 0, 0, 0.41);
 }
 
