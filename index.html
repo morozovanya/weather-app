@@ -18,7 +18,6 @@
     />
   </head>
   <body>
-    <a href="https://github.com/morozovanya/weather-app">Open-source code</a>
     <div class="container">
       <form class="search" id="search-form">
         <div class="row">
@@ -32,7 +31,10 @@
             />
           </div>
           <div class="col-3">
-            <input type="submit" value="🔎" id="searchbutton" />
+            <input 
+            type="submit" 
+            value="🔎" 
+            id="searchbutton" />
           </div>
         </div>
       </form>
@@ -47,7 +49,7 @@
       <div class="row">
         <div class="col-6" id="temperature">
           <div class="row">
-            <div class="col-8 col-sm-2" id="main-emoji">🌤</div>
+            <div class="col-8 col-sm-2"><img src="" id="main-emoji"/></div>
             <div class="col-4 col-sm-8" id="main-data">
               <h1>  </h1>
               <div class="units">
@@ -108,6 +110,7 @@
         </div>
       </div>
     </div>
+    <small> <a href="https://github.com/morozovanya/weather-app" id="developerLink">Open-source code</a> by Morozova Anna</small>
     <script src=src/index.js></script>
     
   </body>

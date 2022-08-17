@@ -32,6 +32,11 @@ function responseRealTemp(response) {
   temperatureReal.innerHTML = `${cityTemp}`;
   let requestedCity = document.querySelector("#location");
   requestedCity.innerHTML = response.data.name;
+  let changeMainEmoji = document.querySelector("#main-emoji");
+  changeMainEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(city) {
@@ -86,8 +91,12 @@ function showTemperature(response) {
     changeCityToLocal.innerHTML = `${cityLocal}`;
     let temperatureLocal = Math.round(response.data.main.temp);
     let changeTemperature = document.querySelector("h1");
-    changeTemperature.innerHTML = `${temperatureLocal}`;
-
+  changeTemperature.innerHTML = `${temperatureLocal}`;
+  let changeMainEmoji = document.querySelector("#main-emoji");
+  changeMainEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let buttonaction = document.querySelector("button");
