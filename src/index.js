@@ -26,7 +26,6 @@ let now = new Date();
 date.innerHTML = formatDate(now);
 
 function responseRealTemp(response) {
-  console.log(response);
   let cityTemp = Math.round(response.data.main.temp);
   let temperatureReal = document.querySelector("h1");
   temperatureReal.innerHTML = `${cityTemp}`;
@@ -37,6 +36,8 @@ function responseRealTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -58,14 +59,17 @@ function handleSubmit(event) {
 function convertToCelsium(event) {
   event.preventDefault();
   let celsiumDegree = document.querySelector("h1");
-  celsiumDegree.innerHTML = `${cityTemp}`;
+  celsiumDegree.innerHTML = Math.round(celsiusTemperature);
 }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitDegree = document.querySelector("h1");
-  fahrenheitDegree.innerHTML = 64;
+  let fahrenheitDegree = (celsiusTemperature * 9) /5 + 32;
+  let temperatureElement = document.querySelector("h1");
+  temperatureElement.innerHTML = Math.round(fahrenheitDegree);
 }
+
+let celsiusTemperature = null;
 
 let temperatureCelsium = document.querySelector("#celsius");
 temperatureCelsium.addEventListener("click", convertToCelsium);
