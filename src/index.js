@@ -33,8 +33,38 @@ function cityDate(timestamp) {
   return `${actualday} ${actualhours}:${actualminutes}`;
 }
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastItem = document.querySelector("#forecast");
+
+
+  let forecastDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = `<div class="row">`;
+  
+  forecastDays.forEach(function (day) {
+    forecastHTML = forecastHTML + `
+  <div class="col-2">
+  <p id="day1">${day}</p>
+  <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42" id=emoji1/>
+  <br/>
+  <span class="temperature-max">17º</span>
+  <span class="temperature-min">12º</span>
+  </div>`;
+  });
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastItem.innerHTML = forecastHTML;
+  
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "670149a988417f0bd9de2e4879ba6c8b";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function responseRealTemp(response) {
-  console.log(response);
   let cityTemp = Math.round(response.data.main.temp);
   let temperatureReal = document.querySelector("h1");
   let requestedCity = document.querySelector("#location");
@@ -43,8 +73,6 @@ function responseRealTemp(response) {
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
 
-
-
   temperatureReal.innerHTML = `${cityTemp}`;
   requestedCity.innerHTML = response.data.name;
   changeMainEmoji.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -52,7 +80,11 @@ function responseRealTemp(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  getForecast(response.data.coord);
 }
+
+
 
 function search(city) {
   let apiKey = "670149a988417f0bd9de2e4879ba6c8b";
@@ -134,6 +166,9 @@ buttonaction.addEventListener("click", localise);
 let searchcity = document.querySelector("#search-form");
 searchcity.addEventListener("submit", handleSubmit);
 
+
 search("Kyiv");
+
+
 
 

@@ -1,6 +1,7 @@
 .container {
   display: block;
   margin: 0px 60px;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -61,10 +62,14 @@ a {
   margin-left: 5px;
 }
 
+#location, #date {
+  font-weight:500;
+}
+
 #forecast {
-  display: flexbox;
+  display: block;
   text-align: center;
-  padding: 30px 4px;
+  padding: 30px 0px;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: rgb(235, 237, 249);
@@ -73,6 +78,10 @@ a {
   border-style: solid;
   border-width: 2px;
   border-color: rgb(89, 106, 202);
+}
+
+.temperature-min {
+  opacity: 50%;
 }
 
 input {
@@ -101,9 +110,10 @@ input {
   display: inline-block;
   width: max-content;
   margin: -50px 0px 20px 0px;
-  background-color: rgb(243, 251, 13);
-  color: rgb(89, 106, 202);
-  padding: 12px;
+  background-color: rgb(68, 67, 65);
+  color: rgb(253, 253, 254);
+  padding: 13px;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   border-radius: 53px;
   border: none;
@@ -115,38 +125,6 @@ h2 {
   display: block;
   padding-top: 20px;
   text-align: left;
-}
-
-p#temperature1 {
-  color: rgba(0, 0, 0, 0.41);
-}
-p#temperature2 {
-  color: rgba(0, 0, 0, 0.41);
-}
-p#temperature3 {
-  color: rgba(0, 0, 0, 0.41);
-}
-p#temperature4 {
-  color: rgba(0, 0, 0, 0.41);
-}
-p#temperature5 {
-  color: rgba(0, 0, 0, 0.41);
-}
-p#temperature6 {
-  color: rgba(0, 0, 0, 0.41);
-}
-p#temperature7 {
-  color: rgba(0, 0, 0, 0.41);
-}
-
-div.col {
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: rgba(0, 0, 0, 0.188);
-}
-
-#noborder {
-  border-right-style: none;
 }
 
 small {
