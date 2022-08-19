@@ -62,8 +62,19 @@ a {
   margin-left: 5px;
 }
 
-#location, #date {
+h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+#date {
   font-weight:500;
+  font-size: 28px;
+}
+
+#location {
+  font-weight:500;
+  font-size: 42px;
 }
 
 #forecast {
@@ -119,6 +130,11 @@ input {
   border: none;
 }
 
+#celsiusORfahrenheit {
+  margin-left: 9px;
+  margin-top: 4px;
+  font-size: 16px;
+}
 
 h2 {
   margin-left: 32px;
