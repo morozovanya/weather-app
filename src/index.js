@@ -111,31 +111,7 @@ function handleSubmit(event) {
 }
 
 
-//feature3
-function convertToCelsium(event) {
-  event.preventDefault();
-  let celsiumDegree = document.querySelector("h1");
-  temperatureCelsium.classList.add("active");
-  temperatureFahrenheit.classList.remove("active");
-  celsiumDegree.innerHTML = Math.round(celsiusTemperature);
-}
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitDegree = (celsiusTemperature * 9) /5 + 32;
-  let temperatureElement = document.querySelector("h1");
-  temperatureCelsium.classList.remove("active");
-  temperatureFahrenheit.classList.add("active");
-  temperatureElement.innerHTML = Math.round(fahrenheitDegree);
-}
-
-let celsiusTemperature = null;
-
-let temperatureCelsium = document.querySelector("#celsius");
-temperatureCelsium.addEventListener("click", convertToCelsium);
-
-let temperatureFahrenheit = document.querySelector("#fahrenheit");
-temperatureFahrenheit.addEventListener("click", convertToFahrenheit);
 
 
 function localise() {
@@ -167,6 +143,8 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  getForecast(response.data.coord);
+
 }
 
 let buttonaction = document.querySelector("button");

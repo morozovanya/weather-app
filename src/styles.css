@@ -22,7 +22,7 @@
   display: inline-block;
   padding: 20px 10px 20px 0;
   margin: 0px 0px 20px 0px;
-  background-color: rgb(235, 237, 249);
+  background-color: rgb(192, 200, 244);
   border-radius: 70px;
   box-sizing: border-box;
   border-style: solid;
@@ -83,7 +83,7 @@ h1 {
   padding: 30px 0px;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: rgb(235, 237, 249);
+  background-color: rgb(192, 200, 244);
   border-radius: 60px;
   box-sizing: border-box;
   border-style: solid;
@@ -115,12 +115,12 @@ input {
 
 #searchbutton {
   background-color: rgb(89, 106, 202);
+  margin-left: -108px;
 }
 
 #currentlocationbutton {
-  display: inline-block;
+  display: block;
   width: max-content;
-  margin: -50px 0px 20px 0px;
   background-color: rgb(68, 67, 65);
   color: rgb(253, 253, 254);
   padding: 13px;
@@ -130,11 +130,6 @@ input {
   border: none;
 }
 
-#celsiusORfahrenheit {
-  margin-left: 9px;
-  margin-top: 4px;
-  font-size: 16px;
-}
 
 h2 {
   margin-left: 32px;
