@@ -20,7 +20,7 @@
 
 #temperature {
   display: inline-block;
-  padding: 20px 10px 20px 0;
+  padding: 20px 10px;
   margin: 0px 0px 20px 0px;
   background-color: rgb(192, 200, 244);
   border-radius: 70px;
@@ -30,17 +30,14 @@
   border-color: rgb(89, 106, 202);
 }
 
-.degrees {
-  position: relative;
-  top: -58px;
-  left: 50px;
-  font-size: 34px;
-}
 
-a {
+
+#celsius {
   color: black;
   text-decoration: none;
   cursor: pointer;
+margin-left: 10px;
+font-size: 28px;
 }
 
 #search-form {
@@ -50,7 +47,6 @@ a {
 }
 
 #main-emoji {
-  font-size: 100px;
   margin: 0px 10px;
   padding: 0px;
 
@@ -80,7 +76,7 @@ h1 {
 #forecast {
   display: block;
   text-align: center;
-  padding: 30px 0px;
+  padding: 40px 0px;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: rgb(192, 200, 244);
@@ -143,3 +139,4 @@ small {
   margin: -60px 10px;
   padding-top: 10px;
 }
+
